@@ -6,4 +6,4 @@ Frontend web developer for JavaScript and React, with extensive knowledge and 03
 
 Responsive Portfolio Website Using Html, Css and JavaScript, With a beautiful user interface. It contains a Header, Home, About, Skills, Qualification, Services, Portfolio, Project in mind, Testimonial, Contact and Footer.
 
-![Resume cv](./assets/imgs/preview.png)
+![Resume cv](./assets/img/preview.png)
