@@ -1,5 +1,6 @@
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
+import { Analytics } from '@vercel/analytics/react'
 
 import '@/styles/tailwind.css'
 
@@ -23,7 +24,10 @@ export default function RootLayout({ children }) {
       <body className="flex h-full bg-zinc-50 dark:bg-black">
         <Providers>
           <div className="flex w-full">
-            <Layout>{children}</Layout>
+            <Layout>
+              {children}
+              <Analytics />
+            </Layout>
           </div>
         </Providers>
       </body>
