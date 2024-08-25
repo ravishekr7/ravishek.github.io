@@ -35,7 +35,7 @@ function MailIcon(props) {
 
 export const metadata = {
   title: 'About',
-  description: `I’m a front-end developer from Pakistan. I love learning how to build fast, accessible and scalable web applications. I always keeping an eye on the javascript ecosystem for what comes next and I'm excited to continue.`,
+  description: `I'm Muhammad, a front-end developer from Pakistan. Although I explored various fields like video editing and graphic design, none truly resonated with me. My journey into front-end development began in 2020 when I discovered HTML and CSS, and I haven't looked back since. I'm always staying up-to-date with the JavaScript ecosystem, excited to see what comes next.`,
 }
 
 export default function About() {
@@ -59,34 +59,35 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I'm Muhammad, a front-end developer from Pakistan. I got
-              introduced to different topics, like video editing, graphics
-              designing and lots more but it never really clicked for me. I
-              started my career as front-end developer in 2020 when I get
-              introduced to HTML and CSS. I always keeping an eye on the
-              javascript ecosystem for what comes next and I'm excited to
-              continue.
+              I'm Muhammad, a front-end developer from Pakistan. Although I
+              explored various fields like video editing and graphic design,
+              none truly resonated with me. My journey into front-end
+              development began in 2020 when I discovered HTML and CSS, and I
+              haven't looked back since. I'm always staying up-to-date with the
+              JavaScript ecosystem, excited to see what comes next.
             </p>
             <p>
-              I started with basic HTML and CSS, build websites those no one
-              liked. Since then, I've truly worked hard day and night to enhance
-              my front-end skills, constantly learning ways to make development
-              easier. My biggest motivation as a front-end developer is creating
-              websites that truly meet my client's needs.
+              I started with basic HTML and CSS, building websites that no one
+              initially liked. Since then, I've worked tirelessly day and night
+              to enhance my front-end skills, always seeking new ways to
+              streamline development. My biggest motivation as a front-end
+              developer is creating websites that genuinely meet my clients'
+              needs.
             </p>
             <p>
-              I spent most of my time searching for how I can solve problems and
-              bugs on my own and that's where I go to the Google and obviously
-              chatGPT where I can find an answer. However, I make mistakes, I
-              get frustrate and I believe that, this is common and I continue to
-              build things.
+              I spend most of my time searching for solutions to problems and
+              bugs on my own, often turning to Google and ChatGPT for answers. I
+              make mistakes, get frustrated, but I believe this is all part of
+              the process. Despite the challenges, I continue to build and grow
+              as a developer.
             </p>
             <p>
-              Currently, I'm working at Tech Mentors, a tech based company that
-              is specialized in web applications development. Tech Mentors is
-              aiming to tap on the growing demands of the tech industry and set
-              itself as one of the best tech company in Berlin, Germany. My
-              go-to stack is React, Next.js, and TailwindCSS to build web apps.
+              Currently, I'm working at Tech Mentors, a tech-based company
+              specializing in web application development. Tech Mentors aims to
+              meet the growing demands of the tech industry and position itself
+              as one of the top tech companies in Berlin, Germany. My go-to
+              stack includes React, Next.js, and TailwindCSS for building modern
+              web apps.
             </p>
           </div>
         </div>
