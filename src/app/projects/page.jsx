@@ -55,8 +55,8 @@ export const metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Apps I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of the front-end web apps over the years but these are the ones that I’m most proud of. Have a look at the apps and check out the design, write me an email if what I can improve."
+      title="Apps I've created in an effort to make my mark on the universe."
+      intro="I’ve worked on numerous front-end web apps over the years, but these are the ones I'm most proud of. Take a look at the designs, and feel free to email me with any suggestions on how I can improve."
     >
       <ul
         role="list"
