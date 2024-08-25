@@ -30,7 +30,7 @@ export default function Speaking() {
   return (
     <SimpleLayout
       title="Contact me."
-      intro="You can contact me via LinkedIn, X (twitter), or send an email (DMs are open). I’ll respond within a day. Feel free to reach out if you have an interesting project or opportunity to collaborate on.."
+      intro="Feel free to contact me via LinkedIn, X (Twitter), or email (DMs are open). I'll respond within a day. If you have an interesting project or collaboration opportunity, I'd love to hear from you."
     >
       <div className="mt-6 flex gap-6">
         <SocialLink
