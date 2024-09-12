@@ -54,14 +54,11 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Front-end developer dedicated to building apps that perfectly align
-            with my clients' needs.
+            Front-end developer dedicated to build apps that perfectly works.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I'm Muhammad, a front-end developer from Pakistan. Although I
-              explored various fields like video editing and graphic design,
-              none truly resonated with me. My journey into front-end
+              I'm Muhammad, a front-end developer from Pakistan. Although I explored various fields like video editing and graphic design, none truly sparked my interest. My journey into front-end
               development began in 2020 when I discovered HTML and CSS, and I
               haven't looked back since. I'm always staying up-to-date with the
               JavaScript ecosystem, excited to see what comes next.
