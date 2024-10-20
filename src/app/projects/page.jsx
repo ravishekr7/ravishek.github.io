@@ -2,37 +2,70 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import BooleanBlockChain from '@/images/logos/Booleanblockchain.svg'
-import AmeroPay from '@/images/logos/ameropay.svg'
+import SadatTransport from '@/images/logos/sadattransport.svg'
+import SmartEnergy from '@/images/logos/smartenergy.svg'
+import HouseToPic from '@/images/logos/housetopic.svg'
 import AudioAesthetics from '@/images/logos/audioAesthetics.svg'
+import SaviCandle from '@/images/logos/savicandle.svg'
+import EVC from '@/images/logos/evc.svg'
 
 const projects = [
   {
-    name: 'Booleanblockchain',
+    name: 'Sadat Transport',
     description:
-      'Boolean Coin is a revolutionary cryptocurrency designed to create a decentralized, secure, and energy-efficient blockchain ecosystem for boolean transactions.',
+      'Crane and Bus Rental Services in Abu Dhabi, UAE, offer dependable mobile crane and bus rental solutions, ensuring precision, safety, and efficiency for all clients lifting needs.',
     link: {
-      href: 'https://www.booleanblockchain.com/',
-      label: 'booleanblockchain.com',
+      href: 'https://sadattransport.com/',
+      label: 'sadattransport.com/',
     },
-    logo: BooleanBlockChain,
+    logo: SadatTransport,
   },
   {
-    name: 'Ameropay',
+    name: 'Smart Energy',
     description:
-      'Amero Pay is a trading name of Amero Pay JSC, a company registered in Czech Republic. Our service is founded on three basic principles: speed, safety, and favorable terms.',
-    link: { href: 'https://apps.ameropay.net/', label: 'apps.ameropay.net' },
-    logo: AmeroPay,
+      'Horizon Energy Solution leading the way in smart, innovative and sustainable solar solutions with advanced solar technology. We provide efficient, cost-effective, and sustainable power.',
+    link: {
+      href: 'https://horizonenergysolution.com/',
+      label: 'horizonenergysolution.com',
+    },
+    logo: SmartEnergy,
+  },
+  {
+    name: 'Housetopic',
+    description:
+      'Housetopic is a collection of luxury properties that epitomize elegance and sophistication. Each home is crafted with exceptional detail, offering unparalleled comfort and style.',
+    link: { href: 'https://housetopic.com.au/', label: 'housetopic.com.au' },
+    logo: HouseToPic,
   },
   {
     name: 'Audioaesthetics',
     description:
-      'Aesthetics is dedicated to designing sound and composing music that ignite engagement, elevate performance, and foster connections between people and organizations.',
+      'Audio Aesthetics is dedicated to designing sound and composing music that ignite engagement, elevate performance, and foster connections between people and organizations.',
     link: {
       href: 'https://audioaesthetics.co.uk/',
       label: 'audioaesthetics.co.uk',
     },
     logo: AudioAesthetics,
+  },
+  {
+    name: 'Savicandleselections',
+    description:
+      'Savi Candle offers eco-friendly, non-toxic candles crafted from natural ingredients, promoting mindful living and a calming, sustainable ambiance.',
+    link: {
+      href: 'https://savicandleselections.com/',
+      label: 'savicandleselections.com',
+    },
+    logo: SaviCandle,
+  },
+  {
+    name: 'Empoweredvoicescollective',
+    description:
+      'Empowered Voices Collective, dedicated to bringing advocacy and empowerment to mental health through community support, resources, and raising awareness about mental wellness.',
+    link: {
+      href: 'https://empoweredvoicescollective.com/',
+      label: 'empoweredvoicescollective.com',
+    },
+    logo: EVC,
   },
 ]
 
