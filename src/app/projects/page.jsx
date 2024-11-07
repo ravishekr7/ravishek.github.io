@@ -11,19 +11,19 @@ import EVC from '@/images/logos/evc.svg'
 
 const projects = [
   {
-    name: 'Sadat Transport',
+    name: 'SadatTransport',
     description:
       'Crane and Bus Rental Services in Abu Dhabi, UAE, offer dependable mobile crane and bus rental solutions, ensuring precision, safety, and efficiency for all clients lifting needs.',
     link: {
       href: 'https://sadattransport.com/',
-      label: 'sadattransport.com/',
+      label: 'sadattransport.com',
     },
     logo: SadatTransport,
   },
   {
-    name: 'Smart Energy',
+    name: 'SmartEnergy',
     description:
-      'Horizon Energy Solution leading the way in smart, innovative and sustainable solar solutions with advanced solar technology. We provide efficient, cost-effective, and sustainable power.',
+      'Horizon Energy Solution is leading the way in smart, innovative, and sustainable solar solutions with advanced solar technology. We provide efficient, cost-effective, and sustainable power.',
     link: {
       href: 'https://horizonenergysolution.com/',
       label: 'horizonenergysolution.com',
@@ -31,14 +31,14 @@ const projects = [
     logo: SmartEnergy,
   },
   {
-    name: 'Housetopic',
+    name: 'HouseTopic',
     description:
       'Housetopic is a collection of luxury properties that epitomize elegance and sophistication. Each home is crafted with exceptional detail, offering unparalleled comfort and style.',
     link: { href: 'https://housetopic.com.au/', label: 'housetopic.com.au' },
     logo: HouseToPic,
   },
   {
-    name: 'Audioaesthetics',
+    name: 'AudioAesthetics',
     description:
       'Audio Aesthetics is dedicated to designing sound and composing music that ignite engagement, elevate performance, and foster connections between people and organizations.',
     link: {
@@ -48,7 +48,7 @@ const projects = [
     logo: AudioAesthetics,
   },
   {
-    name: 'Savicandleselections',
+    name: 'SaviCandleSelections',
     description:
       'Savi Candle offers eco-friendly, non-toxic candles crafted from natural ingredients, promoting mindful living and a calming, sustainable ambiance.',
     link: {
@@ -58,7 +58,7 @@ const projects = [
     logo: SaviCandle,
   },
   {
-    name: 'Empoweredvoicescollective',
+    name: 'EmpoweredVoicesCollective',
     description:
       'Empowered Voices Collective, dedicated to bringing advocacy and empowerment to mental health through community support, resources, and raising awareness about mental wellness.',
     link: {
