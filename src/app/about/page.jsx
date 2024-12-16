@@ -79,11 +79,13 @@ export default function About() {
               as a developer.
             </p>
             <p>
-              Currently, I'm working at Tech Mentors, a tech-based company
-              specializing in web application development. Tech Mentors aims to
-              meet the growing demands of the tech industry and position itself
-              as one of the top tech companies in Berlin, Germany. My go-to
-              stack includes React, Next.js, and TailwindCSS for building modern
+              I have worked with several tech-based companies as a developer,
+              built many projects that speedup companies performance and I mysef
+              satisfied many client's around the world.
+              Currently, I'm looking for work in a tech-based company
+              specializing in web application development that aims to
+              meet the growing demands of the tech industry. My go-to
+              stack includes React, Next.js, TailwindCSS, RestAPI, and Git for building modern
               web apps.
             </p>
           </div>
