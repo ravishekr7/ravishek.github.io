@@ -64,7 +64,7 @@ export default function About() {
               JavaScript ecosystem, excited to see what comes next.
             </p>
             <p>
-              I started with basic HTML and CSS, building websites that no one
+              I started with basic HTML and CSS, built websites that no one
               initially liked. Since then, I've worked tirelessly day and night
               to enhance my front-end skills, always seeking new ways to
               streamline development. My biggest motivation as a front-end
