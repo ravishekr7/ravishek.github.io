@@ -58,15 +58,17 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I'm Muhammad, a front-end developer from Pakistan. Although I explored various fields like video editing and graphic design, none truly sparked my interest. My journey into front-end
+              I'm Muhammad, a front-end developer from Pakistan. Although I
+              explored various fields like video editing and graphic design,
+              none truly sparked my interest. My journey into front-end
               development began in 2020 when I discovered HTML and CSS, and I
-              haven't looked back since. I'm always staying up-to-date with the
-              JavaScript ecosystem, excited to see what comes next.
+              haven't looked back since. I stay up-to-date with the JavaScript
+              ecosystem, always excited to see what comes next.
             </p>
             <p>
-              I started with basic HTML and CSS, built websites that no one
-              initially liked. Since then, I've worked tirelessly day and night
-              to enhance my front-end skills, always seeking new ways to
+              I started with basic HTML and CSS, building websites that no one
+              initially liked. Since then, I have worked tirelessly, day and
+              night, to enhance my front-end skills, always seeking new ways to
               streamline development. My biggest motivation as a front-end
               developer is creating websites that genuinely meet my clients'
               needs.
@@ -74,19 +76,19 @@ export default function About() {
             <p>
               I spend most of my time searching for solutions to problems and
               bugs on my own, often turning to Google and ChatGPT for answers. I
-              make mistakes, get frustrated, but I believe this is all part of
-              the process. Despite the challenges, I continue to build and grow
-              as a developer.
+              make mistakes and get frustrated, but I believe this is all part
+              of the learning process. Despite the challenges, I continue to
+              build and grow as a developer.
             </p>
             <p>
               I have worked with several tech-based companies as a developer,
-              built many projects that speedup companies performance and I mysef
-              satisfied many client's around the world.
-              Currently, I'm looking for work in a tech-based company
-              specializing in web application development that aims to
-              meet the growing demands of the tech industry. My go-to
-              stack includes React, Next.js, TailwindCSS, RestAPI, and Git for building modern
-              web apps.
+              building projects that enhance company performance and satisfy
+              clients worldwide. My go-to stack includes HTML, CSS, JavaScript,
+              and Git for building modern web applications.
+            </p>
+            <p>
+              Last but not least, I am a Computer Science graduate, but I still
+              have a lot to learn, and I strive to improve every single day.
             </p>
           </div>
         </div>
