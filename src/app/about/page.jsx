@@ -35,7 +35,7 @@ function MailIcon(props) {
 
 export const metadata = {
   title: 'About',
-  description: `I'm Muhammad, a front-end developer from Pakistan. Although I explored various fields like video editing and graphic design, none truly resonated with me. My journey into front-end development began in 2020 when I discovered HTML and CSS, and I haven't looked back since. I'm always staying up-to-date with the JavaScript ecosystem, excited to see what comes next.`,
+  description: `I’m Ravishek Ranjan a Data Engineer from India, passionate about designing and building fast, scalable, and reliable data pipelines and systems. I enjoy exploring new technologies in the data ecosystem, staying updated with industry trends, and continuously improving my ability to deliver efficient, accessible, and impactful data solutions.`,
 }
 
 export default function About() {
@@ -58,12 +58,7 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I'm Muhammad, a front-end developer from Pakistan. Although I
-              explored various fields like video editing and graphic design,
-              none truly sparked my interest. My journey into front-end
-              development began in 2020 when I discovered HTML and CSS, and I
-              haven't looked back since. I stay up-to-date with the JavaScript
-              ecosystem, always excited to see what comes next.
+              I’m Ravishek Ranjan , a Data Engineer from India, passionate about designing and building fast, scalable, and reliable data pipelines and systems. I enjoy exploring new technologies in the data ecosystem, staying updated with industry trends, and continuously improving my ability to deliver efficient, accessible, and impactful data solutions.
             </p>
             <p>
               I started with basic HTML and CSS, building websites that no one
@@ -95,31 +90,31 @@ export default function About() {
         <div className="lg:pl-20">
           <ul role="list">
             <SocialLink
-              href="https://www.linkedin.com/in/imuhammadessa/"
+              href="https://www.linkedin.com/in/ravishek-ranjan-6aa366196/"
               icon={LinkedInIcon}
             >
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
-              href="https://github.com/imuhammadessa"
+              href="https://github.com/ravishekr7"
               icon={GitHubIcon}
               className="mt-4"
             >
               Follow on GitHub
             </SocialLink>
             <SocialLink
-              href="https://twitter.com/imuhammadessa"
+              href="https://x.com/Ravishekranjan"
               icon={XIcon}
               className="mt-4"
             >
               Follow on X (Twitter)
             </SocialLink>
             <SocialLink
-              href="mailto:imuhammadessa@gmail.com"
+              href="mailto:ravishekr7@gmail.com"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              imuhammadessa@gmail.com
+              ravishekr7@gmail.com
             </SocialLink>
           </ul>
         </div>

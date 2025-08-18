@@ -5,15 +5,30 @@ import Link from 'next/link'
 
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
+import { Button } from '@/components/Button'
 import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/SocialIcons'
 import Kpitb from '@/images/logos/Kpitb.svg'
 import Kpyouth from '@/images/logos/Kpyouth.svg'
-import Eduonix from '@/images/logos/eduonix.svg'
-import InternsPakistan from '@/images/logos/InternsPakistan.svg'
-import TheMentorsPakistan from '@/images/logos/thementorspakistan.svg'
-import TechMentors from '@/images/logos/techmentors.svg'
+import Brane from '@/images/logos/brane.png'
+import Silfra from '@/images/logos/silfra.png'
+import Tekion from '@/images/logos/tekion.png'
+import Guidewire from '@/images/logos/guidewire.png'
 import { getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
+
+function ArrowDownIcon(props) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M8 3v8m0 0l-3-3m3 3l3-3"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
 
 function BriefcaseIcon(props) {
   return (
@@ -166,13 +181,13 @@ function Certificates() {
     {
       company: 'React.js Development',
       title: 'TECH MENTORS',
-      logo: TechMentors,
+      logo: Guidewire,
       start: '2024',
     },
     {
       company: 'Software Testing',
       title: 'EDUONIX',
-      logo: Eduonix,
+      logo: Brane,
       start: '2022',
     },
     {
@@ -207,35 +222,35 @@ function Certificates() {
 function Resume() {
   let resume = [
     {
-      company: 'Tech Mentors',
-      title: 'Front-end Developer',
-      logo: TechMentors,
-      start: '2022',
+      company: 'Guidewire',
+      title: 'Software Engineer II',
+      logo: Guidewire,
+      start: '2023',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'KPITB',
-      title: 'Web Developer',
-      logo: Kpitb,
-      start: '2021',
-      end: '2022',
+      company: 'Tekion',
+      title: 'Associate Software Engineer',
+      logo: Tekion,
+      start: '2022',
+      end: '2023',
     },
     {
-      company: 'Interns Pakistan',
-      title: 'Front-end Developer',
-      logo: InternsPakistan,
-      start: '2020',
+      company: 'Brane Enterprises',
+      title: 'Software Engineer Intern',
+      logo: Brane,
+      start: '2021',
       end: '2021',
     },
     {
-      company: 'The Mentors, Pakistan',
-      title: 'Web Developer',
-      logo: TheMentorsPakistan,
-      start: '2017',
-      end: '2020',
+      company: 'Silfra Technologies',
+      title: 'Full Stack Developer Intern',
+      logo: Silfra,
+      start: '2021',
+      end: '2021',
     },
   ]
 
@@ -251,14 +266,15 @@ function Resume() {
             <Role key={index} role={role} />
           ))}
         </ol>
-        {/* <Button
-          href="../pdf/MuhammadEssaResume.pdf"
+        <Button
+          href="/Resume.pdf"
           variant="secondary"
           className="group mt-6 w-full"
+          download
         >
           Download CV
           <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-        </Button> */}
+        </Button>
       </div>
     </>
   )
@@ -272,30 +288,36 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi there, I'm Muhammad
+            Hi there, I'm Ravishek
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m a front-end developer from Pakistan. I love learning how to
-            build fast, accessible and scalable web applications. I always keep
-            an eye on the JavaScript ecosystem for what comes next and I'm
-            excited to continue.
+            I’m a Data Engineer from India, passionate about designing and building fast, scalable, and reliable data pipelines and systems. I enjoy exploring new technologies in the data ecosystem, staying updated with industry trends, and continuously improving my ability to deliver efficient, accessible, and impactful data solutions.  
           </p>
-          <div className="mt-6 flex gap-6">
+          <div className="mt-6 flex gap-6 items-center flex-wrap">
             <SocialLink
-              href="https://www.linkedin.com/in/imuhammadessa/"
+              href="https://www.linkedin.com/in/ravishek-ranjan-6aa366196/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
             <SocialLink
-              href="https://github.com/iMuhammadessa"
+              href="https://github.com/ravishekr7"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://twitter.com/imuhammadessa"
+              href="https://x.com/Ravishekranjan"
               aria-label="Follow on X"
               icon={XIcon}
             />
+            <Button
+              href="/Resume.pdf"
+              variant="secondary"
+              className="group flex items-center gap-2 px-3 py-1 text-sm"
+              download
+            >
+              Download CV
+              <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+            </Button>
           </div>
         </div>
       </Container>

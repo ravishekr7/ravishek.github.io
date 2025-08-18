@@ -6,11 +6,11 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - Muhammad Essa',
-    default: 'Muhammad Essa - Front-end developer.',
+    template: '%s - Ravishek Ranjan',
+    default: 'Ravishek Ranjan - Data Engineer.',
   },
   description:
-    'I’m Muhammad, a front-end developer from Pakistan. I focused on building fast, accessible, and scalable web apps.',
+    'I’m a Data Engineer from India, passionate about designing and building fast, scalable, and reliable data pipelines and systems. I enjoy exploring new technologies in the data ecosystem, staying updated with industry trends, and continuously improving my ability to deliver efficient, accessible, and impactful data solutions.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,

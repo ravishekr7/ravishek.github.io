@@ -34,17 +34,17 @@ export default function Speaking() {
     >
       <div className="mt-6 flex gap-6">
         <SocialLink
-          href="https://www.linkedin.com/in/imuhammadessa/"
+          href="https://www.linkedin.com/in/ravishek-ranjan-6aa366196/"
           aria-label="Follow on LinkedIn"
           icon={LinkedInIcon}
         />
         <SocialLink
-          href="https://twitter.com/imuhammadessa"
+          href="https://x.com/Ravishekranjan"
           aria-label="Follow on X"
           icon={XIcon}
         />
         <SocialLink
-          href="mailto:imuhammadessa@gmail.com"
+          href="mailto:ravishekr7@gmail.com"
           aria-label="Send an email"
           icon={MailIcon}
         />
