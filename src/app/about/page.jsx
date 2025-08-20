@@ -54,36 +54,20 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Front-end developer dedicated to build apps that perfectly works.
+            Data & Backend Engineer who loves exploring, experimenting, and building systems that scale.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’m Ravishek Ranjan , a Data Engineer from India, passionate about designing and building fast, scalable, and reliable data pipelines and systems. I enjoy exploring new technologies in the data ecosystem, staying updated with industry trends, and continuously improving my ability to deliver efficient, accessible, and impactful data solutions.
+              Hi, I’m Ravishek Ranjan — a Data & Backend Engineer who loves turning complex challenges into scalable, reliable systems. For me, solving problems isn’t just a job, it’s a way to think, explore, and push boundaries.
             </p>
             <p>
-              I started with basic HTML and CSS, building websites that no one
-              initially liked. Since then, I have worked tirelessly, day and
-              night, to enhance my front-end skills, always seeking new ways to
-              streamline development. My biggest motivation as a front-end
-              developer is creating websites that genuinely meet my clients'
-              needs.
+             I enjoy working in teams just as much as solving problems independently. Collaboration gives me different perspectives, while solo problem-solving helps me dive deep and explore outside-the-box approaches. I believe every challenge has multiple possibilities, and I love discussing, debating, and experimenting to find the best one.
             </p>
             <p>
-              I spend most of my time searching for solutions to problems and
-              bugs on my own, often turning to Google and ChatGPT for answers. I
-              make mistakes and get frustrated, but I believe this is all part
-              of the learning process. Despite the challenges, I continue to
-              build and grow as a developer.
+              Curiosity drives most of my work. I often end up doing POCs on new tools, architectures, or patterns — whether it’s exploring how new tools works, trying out AWS services, or experimenting with new data strategies. For me, research isn’t about theory alone; it’s about figuring out how something new can actually solve real problems.
             </p>
             <p>
-              I have worked with several tech-based companies as a developer,
-              building projects that enhance company performance and satisfy
-              clients worldwide. My go-to stack includes HTML, CSS, JavaScript,
-              and Git for building modern web applications.
-            </p>
-            <p>
-              Last but not least, I am a Computer Science graduate, but I still
-              have a lot to learn, and I strive to improve every single day.
+              And when I’m not designing data pipelines or backend systems, you’ll probably find me solving DSA problems just for fun — keeping my brain sharp and my problem-solving instincts alive. At the end of the day, I just love building things that scale, perform, and make life easier.
             </p>
           </div>
         </div>
