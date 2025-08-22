@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import SadatTransport from '@/images/logos/sadattransport.svg'
+import Probot from '@/images/logos/probot.png'
+import Cmhp from '@/images/logos/cmhp.png'
 import SmartEnergy from '@/images/logos/smartenergy.svg'
 import HouseToPic from '@/images/logos/housetopic.svg'
 import AudioAesthetics from '@/images/logos/audioAesthetics.svg'
@@ -11,61 +13,24 @@ import EVC from '@/images/logos/evc.svg'
 
 const projects = [
   {
-    name: 'SadatTransport',
+    name: 'PRobot',
     description:
-      'Crane and Bus Rental Services in Abu Dhabi, UAE, offer dependable mobile crane and bus rental solutions, ensuring precision, safety, and efficiency for all clients lifting needs.',
+      'An AI-powered CLI tool that auto-generates rich PR titles & descriptions by pulling context from Jira and Confluence — making code reviews faster and smarter.',
     link: {
-      href: 'https://sadattransport.com/',
-      label: 'sadattransport.com',
+      href: 'https://probot.com/',
+      label: 'probot.com',
     },
-    logo: SadatTransport,
+    logo: Probot,
   },
   {
-    name: 'SmartEnergy',
+    name: 'Community Mental Health Programme',
     description:
-      'Horizon Energy Solution is leading the way in smart, innovative, and sustainable solar solutions with advanced solar technology. We provide efficient, cost-effective, and sustainable power.',
+      'Contributed to an open-source full-stack project for hospitals, building features in Go (backend) and React (frontend) to support reservations and financial reporting.',
     link: {
-      href: 'https://horizonenergysolution.com/',
-      label: 'horizonenergysolution.com',
+      href: 'https://https://www.missionvivekananda.org.in/cmhp/',
+      label: 'missionvivekananda.org',
     },
-    logo: SmartEnergy,
-  },
-  {
-    name: 'HouseTopic',
-    description:
-      'Housetopic is a collection of luxury properties that epitomize elegance and sophistication. Each home is crafted with exceptional detail, offering unparalleled comfort and style.',
-    link: { href: 'https://housetopic.com.au/', label: 'housetopic.com.au' },
-    logo: HouseToPic,
-  },
-  {
-    name: 'AudioAesthetics',
-    description:
-      'Audio Aesthetics is dedicated to designing sound and composing music that ignite engagement, elevate performance, and foster connections between people and organizations.',
-    link: {
-      href: 'https://audioaesthetics.co.uk/',
-      label: 'audioaesthetics.co.uk',
-    },
-    logo: AudioAesthetics,
-  },
-  {
-    name: 'SaviCandleSelections',
-    description:
-      'Savi Candle offers eco-friendly, non-toxic candles crafted from natural ingredients, promoting mindful living and a calming, sustainable ambiance.',
-    link: {
-      href: 'https://savicandleselections.com/',
-      label: 'savicandleselections.com',
-    },
-    logo: SaviCandle,
-  },
-  {
-    name: 'EmpoweredVoicesCollective',
-    description:
-      'Empowered Voices Collective, dedicated to bringing advocacy and empowerment to mental health through community support, resources, and raising awareness about mental wellness.',
-    link: {
-      href: 'https://empoweredvoicescollective.com/',
-      label: 'empoweredvoicescollective.com',
-    },
-    logo: EVC,
+    logo: Cmhp,
   },
 ]
 
@@ -88,8 +53,8 @@ export const metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Apps I've created in an effort to make my mark on the universe."
-      intro="I’ve worked on numerous front-end web apps over the years, but these are the ones I'm most proud of. Take a look at the designs, and feel free to email me with any suggestions on how I can improve."
+      title="Things I’ve built to learn, explore, and make an impact."
+      intro="I’ve explored data engineering, backend systems, and a bit of AI experimentation. These projects capture the ones I’m most proud of — from solving real scalability challenges to tinkering with automation tools. Feel free to reach out if you’ve got ideas, feedback, or just want to geek out about data systems."
     >
       <ul
         role="list"
