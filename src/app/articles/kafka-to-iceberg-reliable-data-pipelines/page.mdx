@@ -1,0 +1,116 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import DataReliability from './designing-reliable-data.png'
+import FlowMermaid from './mermaid-data.png'
+
+export const article = {
+  author: 'Ravishek Ranjan',
+  date: '2023-08-23',
+  title: `Designing Reliable Data Pipelines: Kafka → Iceberg on AWS`,
+  description: `A practical guide to building data pipelines that don’t lose events, scale predictably, and stay cost-aware—from Kafka ingestion to Apache Iceberg on S3, orchestrated with AWS services.`,
+  slug: 'kafka-to-iceberg-reliable-data-pipelines',
+  tags: ['Data Engineering', 'Kafka', 'Apache Iceberg', 'AWS', 'Reliability'],
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Reliability in data engineering isn’t a “nice to have”—it’s the whole game. This is one elegant design pipelines that keep data consistent from **Kafka** to **Apache Iceberg** on **S3**, with **AWS** doing the heavy lifting.
+
+<Image src={DataReliability} alt="Designing reliable data pipelines on AWS with Kafka and Iceberg" />
+
+### The Core Principles
+
+1. **No silent failure**: every hop emits signals (metrics, logs, traces, DLQs).
+2. **Idempotency first**: consumers + writers must tolerate retries.
+3. **Contract before code**: schemas evolve under control (compatibility + versioning).
+4. **Backpressure > backlog**: shed/slow early, recover gracefully later.
+5. **Cost is a feature**: optimize file layout, compaction, and read patterns.
+
+### Reference Architecture (High Level)
+
+- **Ingest**: Kafka topics partitioned by a stable key (e.g., `tenantId` or `entityId`).
+- **Process**: Async workers/Lambda consumers transform, validate, and enrich.
+- **Store**: Write to **Iceberg** tables in S3 with partitioning + small-file management.
+- **Orchestrate**: Step Functions/SQS for fan-out, retries, and observability.
+- **Observe**: Datadog/CloudWatch metrics on lag, throughput, failures, and compaction.
+
+<Image src={FlowMermaid} alt="Flow diag of Data" />
+
+### Idempotency & Exactly-Once-ish
+
+* Use a **deterministic record key** + **upsert/merge-on-read** in Iceberg.
+* Track a **source offset/LSN** per record; reject duplicates on write.
+* Prefer **at-least-once** delivery with **idempotent sinks** over fragile EO.
+
+```sql
+-- Pseudo upsert pattern with Iceberg MERGE
+MERGE INTO db.events t
+USING staging s
+ON t.event_id = s.event_id AND t.source_lsn = s.source_lsn
+WHEN NOT MATCHED THEN INSERT *
+```
+
+### Schema Evolution That Won’t Hurt Tomorrow
+
+* Enforce compatibility (backward or full) via a schema registry.
+* Keep **immutable meanings**; add fields with defaults; avoid renames where possible.
+* Version payloads: `payload_version`, `emitted_at`, `source` → priceless for audits.
+
+### Iceberg Layout & Cost Control
+
+* Partition by **time + high-cardinality business key** only if it helps reads.
+* Schedule **compaction** to fix small files (plan size targets that match read patterns).
+* Tune metadata: avoid runaway snapshots; vacuum with safe retention.
+* Push down predicates to keep scans lean.
+
+```
+# Example compaction window (conceptual)
+compaction:
+  target_file_size_mb: 512
+  schedule: "daily"
+  min_commits_since: 5
+```
+
+### Orchestration, Retries & Backpressure
+
+* **SQS between stages** to buffer spikes; control concurrency at consumers.
+* **Step Functions** for fan-out + bounded retries with exponential backoff.
+* Tag every retry with **attempt, cause, last\_offset** for quick forensics.
+
+```
+{
+  "Retry": [
+    { "ErrorEquals": ["States.ALL"], "IntervalSeconds": 5, "BackoffRate": 2.0, "MaxAttempts": 6 }
+  ],
+  "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "SendToDLQ" }]
+}
+```
+
+### Observability: What I Actually Watch
+
+* **Kafka**: consumer lag per partition; rebalance churn.
+* **Pipeline**: throughput, error rate, p95/99 latency, retry counts.
+* **Iceberg**: snapshot count growth, file count per partition, scan-time.
+* **End-to-end SLOs**: “event → queryable in X minutes” with burn alerts.
+
+### A Quick Validation/POC Loop I Use
+
+1. Reproduce edge cases (late events, out-of-order, duplicates).
+2. Run load tests with realistic keys/size distributions.
+3. Deliberately break a stage—verify DLQ, retries, and idempotent writes.
+4. Query the table as a consumer would—measure real scan cost.
+
+### Final Checklist (Save This)
+
+* Deterministic keys + idempotent sink
+* Schema registry + compatibility rules
+* Partitioning & compaction plan
+* SQS/Step Functions for retries/backoff
+* Metrics, logs, traces wired end-to-end
+* Cost dashboards for Iceberg read/write patterns
+
+**Bottom line:** reliability is designed, not discovered. If your pipeline can explain *every* record’s journey—and recover without drama—you’re already winning.

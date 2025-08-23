@@ -1,0 +1,93 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import TitleImage from './title-image.png'
+
+export const article = {
+  author: 'Ravishek Ranjan',
+  date: '2025-03-10',
+  title: `What happens when we do a DB rollback in AWS Aurora RDS?`,
+  description: `An engineer’s guide to Aurora RDS rollback: what actually happens under the hood with replication slots, LSNs, and point-in-time recovery (PITR).`,
+  slug: 'aws-aurora-db-rollback',
+  tags: ['Data Engineering', 'Postgres', 'AWS', 'Aurora RDS', 'Database', 'Rollback', 'Replication Slots', 'PITR'],
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+<Image src={TitleImage} alt="AWS Aurora RDS rollback illustration" />
+
+### Why Rollbacks Matter
+
+Sometimes you hit a point where schema changes, accidental deletes, or bad writes require rolling back your Aurora RDS cluster. Aurora (compatible with Postgres) doesn’t support “UNDO” at SQL level beyond transactions — instead it relies on **point-in-time recovery (PITR)** and **cloning** mechanisms.  
+
+But what actually happens under the hood when you roll back? And how does it impact replication slots, logical decoding, and log sequence numbers (LSNs)?
+
+---
+
+### Aurora Internals: WAL, LSN, and Storage
+
+Aurora still writes **WAL (Write-Ahead Logs)** like Postgres. Every change advances the **Log Sequence Number (LSN)**. Aurora stores WAL in its distributed storage layer across multiple AZs.  
+
+When you trigger a rollback via PITR:  
+- Aurora replays WAL only up to the chosen timestamp or LSN.  
+- A **new cluster** is created at that state — the original cluster isn’t rewound in place.  
+- Effectively, you fork storage at that earlier LSN.
+
+---
+
+### Replication Slots in PITR
+
+Replication slots pin WAL so downstream consumers (e.g., Debezium, custom logical replication clients) don’t miss data.  
+
+From practical testing:  
+- **Slots are carried over** to the new cluster, **if they existed before the PITR timestamp**.  
+- Slots created **after** the PITR timestamp are not present in the restored cluster.  
+- For slots that were **lagging at the PITR point**, Aurora replays only the **delta WAL** needed to bring them up to the rollback boundary.  
+
+This means rollback restores slots *and their state* as of that moment in time — but continuity for CDC consumers still depends on how far behind those slots were.
+
+---
+
+### What Happens to LSNs After PITR?
+
+Aurora uses Postgres’ **timeline mechanism** when rolling back.  
+
+- Normally, LSNs increase monotonically.  
+- When you PITR back (say to LSN `L4`), Aurora creates a **new timeline** starting from that commit.  
+
+Implications:  
+- The numeric value of LSNs may appear to “go backwards” (smaller integers).  
+- They never overlap, because the **timeline ID** changes.  
+- Example: Original timeline = `L4 → L5 → L6`.  
+  - PITR back to `L4`.  
+  - New timeline = `L4' (timeline 2) → L8 → L9`.  
+- Consumers must treat `(timeline, LSN)` as unique — not just the integer.  
+
+This prevents ambiguous WAL reuse but means **CDC clients must be timeline-aware** after PITR.
+
+---
+
+### Key Takeaways
+
+- **Replication slots are preserved** if they existed before the rollback point; newer ones are lost.  
+- **Lagging slots** replay WAL up to the PITR boundary.  
+- Aurora restores to the **last successful commit** before PITR.  
+- PITR creates a **new timeline** — LSN integers may look smaller but never overlap.  
+- CDC consumers must be prepared for **slot resets and timeline changes** after PITR.  
+
+---
+
+### Practical Checklist
+
+- Confirm **which replication slots exist** at the rollback point.  
+- Expect to re-initialize logical consumers if slots are missing.  
+- Automate **LSN gap detection** to catch silent data loss.  
+- Remember: rollback = **new cluster fork**, not an in-place undo.  
+- Validate CDC pipelines after rollback to ensure no duplication or data gaps.  
+
+---
+
+**Bottom line:** Aurora’s rollback is a PITR-based fork, not a magic undo. Replication slots and timelines behave predictably if you know the rules — but without planning, a rollback can silently break CDC pipelines and leave downstream systems inconsistent.  
