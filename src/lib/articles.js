@@ -1,5 +1,7 @@
 import glob from 'fast-glob'
 
+export const dynamic = 'force-static'
+
 async function importArticle(articleFilename) {
   let { article } = await import(`../app/articles/${articleFilename}`)
 
