@@ -2,14 +2,8 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import SadatTransport from '@/images/logos/sadattransport.svg'
 import Probot from '@/images/logos/probot.png'
 import Cmhp from '@/images/logos/cmhp.png'
-import SmartEnergy from '@/images/logos/smartenergy.svg'
-import HouseToPic from '@/images/logos/housetopic.svg'
-import AudioAesthetics from '@/images/logos/audioAesthetics.svg'
-import SaviCandle from '@/images/logos/savicandle.svg'
-import EVC from '@/images/logos/evc.svg'
 
 const projects = [
   {

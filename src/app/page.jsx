@@ -7,12 +7,11 @@ import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/SocialIcons'
-import Kpitb from '@/images/logos/tekion.png'
-import Kpyouth from '@/images/logos/tekion.png'
 import Brane from '@/images/logos/brane.png'
 import Silfra from '@/images/logos/silfra.png'
 import Tekion from '@/images/logos/tekion.png'
 import Guidewire from '@/images/logos/guidewire.png'
+import Protrainy from '@/images/logos/protrainy.png'
 import { getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -193,13 +192,13 @@ function Certificates() {
     {
       company: 'NodeJS Development',
       title: 'KPITB',
-      logo: Kpitb,
+      logo: Guidewire,
       start: '2021',
     },
     {
       company: 'WordPress Development',
       title: 'KPYOUTH',
-      logo: Kpyouth,
+      logo: Guidewire,
       start: '2018',
     },
   ]
@@ -249,6 +248,13 @@ function Resume() {
       company: 'Silfra Technologies',
       title: 'Full Stack Developer Intern',
       logo: Silfra,
+      start: '2021',
+      end: '2021',
+    },
+    {
+      company: 'Protrainy',
+      title: 'Back End Developer Intern',
+      logo: Protrainy,
       start: '2021',
       end: '2021',
     },
